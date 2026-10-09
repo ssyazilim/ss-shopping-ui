@@ -13,6 +13,8 @@
   "main": "./nuxt.config.ts",
   "files": [
     "app",
+    "config",
+    "public",
     "nuxt.config.ts"
   ],
   "scripts": {
@@ -31,24 +33,32 @@
     "*": "prettier -wu --cache"
   },
   "peerDependencies": {
+    "@formkit/auto-animate": "^0.10.0",
+    "@headlessui/vue": "^1.7.23",
     "@heroicons/vue": "^2.2.0",
+    "@nuxt/icon": "^2.5.0",
+    "@nuxtjs/color-mode": "^4.0.0",
     "@nuxtjs/i18n": "^10.6.0",
     "@nuxtjs/tailwindcss": "^6.14.0",
-    "@nuxtjs/color-mode": "^4.0.0",
-    "@nuxt/icon": "^2.5.0",
     "@ssyazilim/ss-shopping-schemas": "^0.1.82",
+    "@vite-pwa/nuxt": "^1.1.0",
     "nuxt": "^4.5.2",
+    "swiper": "^12.1.0",
     "vue": "^3.5.0",
+    "vue-star-rating": "=2.1.0",
     "vue3-toastify": "^0.2.8"
   },
   "devDependencies": {
     "@eslint/compat": "^2.1.0",
     "@eslint/eslintrc": "^3.3.6",
+    "@formkit/auto-animate": "^0.10.0",
+    "@headlessui/vue": "^1.7.23",
     "@heroicons/vue": "^2.2.0",
     "@nuxt/eslint-config": "^1.17.0",
-    "@nuxtjs/i18n": "^10.6.0",
     "@nuxt/icon": "^2.5.0",
+    "@nuxtjs/i18n": "^10.6.0",
     "@ssyazilim/ss-shopping-schemas": "^0.1.82",
+    "@vite-pwa/nuxt": "^1.1.0",
     "eslint": "^10.10.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-jsonc": "^3.4.1",
@@ -66,8 +76,10 @@
     "stylelint-config-recess-order": "^7.4.0",
     "stylelint-config-standard-scss": "^17.0.0",
     "stylelint-config-standard-vue": "^2.0.0",
+    "swiper": "^12.2.0",
     "tailwindcss": "^3.4.19",
     "typescript": "^6.0.3",
+    "vue-star-rating": "=2.1.0",
     "vue-tsc": "^3.1.0",
     "vue3-toastify": "^0.2.8",
     "zod": "4.4.3"

@@ -1,4 +1,5 @@
 import { fileURLToPath } from "node:url"
+import { pwa } from "./config/pwa"
 
 export default defineNuxtConfig({
   $env: {
@@ -7,6 +8,12 @@ export default defineNuxtConfig({
       i18n: { strategy: "no_prefix" },
     },
   },
+
+  modules: ["@vite-pwa/nuxt"],
+
+  pwa,
+
+  css: [fileURLToPath(new URL("./app/assets/style/transitions.css", import.meta.url))],
 
   components: [
     {
@@ -20,7 +27,28 @@ export default defineNuxtConfig({
     },
   ],
 
+  // Swiper ships web components (swiper-container, swiper-slide), Vue must not resolve them
+  vue: {
+    compilerOptions: {
+      isCustomElement: (tag) => tag.startsWith("swiper-"),
+    },
+  },
+
   vite: {
-    resolve: { dedupe: ["vue-i18n", "@heroicons/vue", "@ssyazilim/ss-shopping-schemas", "vue3-toastify"] },
+    optimizeDeps: {
+      include: ["swiper/element/bundle"],
+    },
+    resolve: {
+      dedupe: [
+        "@formkit/auto-animate",
+        "@headlessui/vue",
+        "@heroicons/vue",
+        "@ssyazilim/ss-shopping-schemas",
+        "swiper",
+        "vue-i18n",
+        "vue-star-rating",
+        "vue3-toastify",
+      ],
+    },
   },
 })

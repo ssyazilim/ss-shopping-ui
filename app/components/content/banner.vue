@@ -1,5 +1,20 @@
+<script setup lang="ts">
+withDefaults(
+  defineProps<{
+    variant?: "soft" | "dark" | "brand"
+    align?: "center" | "start"
+    dismissible?: boolean
+  }>(),
+  {
+    variant: "soft",
+    align: "center",
+    dismissible: false,
+  }
+)
+</script>
+
 <template>
-  <elements-banner is-content>
+  <elements-banner is-content :variant="variant" :align="align" :dismissible="dismissible">
     <template v-if="$slots.title" #title>
       <slot name="title" mdc-unwrap="p" />
     </template>

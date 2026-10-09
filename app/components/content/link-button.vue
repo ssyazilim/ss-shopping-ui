@@ -2,15 +2,17 @@
 const props = withDefaults(
   defineProps<{
     to?: string
-    color?: "indigo" | "violet" | "sky" | "green" | "lime" | "yellow" | "red" | "slate" | "stone"
+    color?: "indigo" | "violet" | "sky" | "green" | "lime" | "yellow" | "red" | "slate" | "stone" | "white"
     icon?: string
-    iconAfter?: boolean
+    variant?: "solid" | "link"
+    iconafter?: boolean
   }>(),
   {
     to: "",
     color: "indigo",
     icon: "",
-    iconAfter: false,
+    variant: "solid",
+    iconafter: false,
   }
 )
 
@@ -22,7 +24,13 @@ const link = computed(() => (props.to.startsWith("/") ? localePath(props.to) : p
 </script>
 
 <template>
-  <form-elements-button is-content :to="link || undefined" :color="color" :icon-after="iconAfter">
+  <form-elements-button
+    is-content
+    :to="link || undefined"
+    :color="color"
+    :variant="variant"
+    :icon-after="iconafter"
+  >
     <template v-if="icon" #icon>
       <Icon :name="icon" class="size-5" />
     </template>

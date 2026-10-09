@@ -1,0 +1,9 @@
+<template>
+  <!-- Styles whatever text it gets (headings, paragraphs, lists, quotes, images, code); width and spacing come from the layout around it -->
+  <!-- MDC wraps h2–h4 text in an anchor (<a href="#id">) that must keep the heading's look; inline code drops the plugin's backticks; task lists drop their bullets -->
+  <div
+    class="prose prose-gray dark:prose-invert prose-headings:font-semibold prose-headings:tracking-tight prose-h1:text-4xl prose-h2:text-3xl prose-a:font-semibold prose-blockquote:font-semibold prose-blockquote:not-italic prose-blockquote:[quotes:none] prose-img:rounded-xl sm:prose-h1:text-5xl prose-code:before:content-none prose-code:after:content-none prose-h5:text-[color:var(--tw-prose-headings)] prose-h6:text-[color:var(--tw-prose-headings)] max-w-none [--tw-prose-body:theme(colors.gray.600)] [--tw-prose-bullets:theme(colors.indigo.600)] [--tw-prose-counters:theme(colors.indigo.600)] [--tw-prose-invert-body:theme(colors.gray.400)] [--tw-prose-invert-bullets:theme(colors.indigo.400)] [--tw-prose-invert-counters:theme(colors.indigo.400)] [--tw-prose-invert-links:theme(colors.indigo.400)] [--tw-prose-invert-quote-borders:theme(colors.indigo.400)] [--tw-prose-links:theme(colors.indigo.600)] [--tw-prose-quote-borders:theme(colors.indigo.600)] [&_.contains-task-list]:list-none [&_.contains-task-list]:ps-0 [&_.task-list-item>input]:me-2 [&_.task-list-item>input]:rounded [&_.task-list-item>input]:text-indigo-600 [&_:is(h1,h2,h3,h4,h5,h6)>a]:text-inherit [&_:is(h1,h2,h3,h4,h5,h6)>a]:no-underline [&_:is(h1,h2,h3,h4,h5,h6)>a]:[font-weight:inherit] [&_:not(pre)>code]:rounded [&_:not(pre)>code]:bg-gray-100 [&_:not(pre)>code]:px-1.5 [&_:not(pre)>code]:py-0.5 dark:[&_:not(pre)>code]:bg-white/10 [&_a[class]]:no-underline"
+  >
+    <slot />
+  </div>
+</template>
